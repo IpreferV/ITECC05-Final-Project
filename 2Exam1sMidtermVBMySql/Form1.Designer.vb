@@ -78,7 +78,7 @@ Partial Class Form1
         ' btn_Login
         ' 
         btn_Login.Font = New Font("Segoe UI", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        btn_Login.Location = New Point(206, 186)
+        btn_Login.Location = New Point(206, 198)
         btn_Login.Name = "btn_Login"
         btn_Login.Size = New Size(75, 37)
         btn_Login.TabIndex = 4
@@ -89,7 +89,7 @@ Partial Class Form1
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(800, 450)
+        ClientSize = New Size(299, 247)
         Controls.Add(btn_Login)
         Controls.Add(Label2)
         Controls.Add(Label1)
@@ -97,6 +97,8 @@ Partial Class Form1
         Controls.Add(txtBox_userName)
         Controls.Add(btn_Test)
         Name = "Form1"
+        SizeGripStyle = SizeGripStyle.Show
+        StartPosition = FormStartPosition.CenterScreen
         Text = "Login Form"
         ResumeLayout(False)
         PerformLayout()

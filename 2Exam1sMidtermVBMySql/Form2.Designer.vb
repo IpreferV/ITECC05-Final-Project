@@ -33,6 +33,7 @@ Partial Class Form2
         txtBox_Age = New TextBox()
         btn_Save = New Button()
         btn_Update = New Button()
+        btn_Delete = New Button()
         SuspendLayout()
         ' 
         ' btn_SignOut
@@ -115,29 +116,46 @@ Partial Class Form2
         ' 
         ' btn_Save
         ' 
+        btn_Save.BackColor = Color.PaleGreen
+        btn_Save.FlatStyle = FlatStyle.Flat
         btn_Save.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         btn_Save.Location = New Point(13, 201)
         btn_Save.Name = "btn_Save"
         btn_Save.Size = New Size(92, 28)
         btn_Save.TabIndex = 1
         btn_Save.Text = "Save"
-        btn_Save.UseVisualStyleBackColor = True
+        btn_Save.UseVisualStyleBackColor = False
         ' 
         ' btn_Update
         ' 
+        btn_Update.BackColor = Color.LemonChiffon
+        btn_Update.FlatStyle = FlatStyle.Flat
         btn_Update.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         btn_Update.Location = New Point(111, 201)
         btn_Update.Name = "btn_Update"
         btn_Update.Size = New Size(92, 28)
         btn_Update.TabIndex = 1
         btn_Update.Text = "Update"
-        btn_Update.UseVisualStyleBackColor = True
+        btn_Update.UseVisualStyleBackColor = False
+        ' 
+        ' btn_Delete
+        ' 
+        btn_Delete.BackColor = Color.LightCoral
+        btn_Delete.FlatStyle = FlatStyle.Flat
+        btn_Delete.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        btn_Delete.Location = New Point(13, 235)
+        btn_Delete.Name = "btn_Delete"
+        btn_Delete.Size = New Size(92, 28)
+        btn_Delete.TabIndex = 1
+        btn_Delete.Text = "Delete"
+        btn_Delete.UseVisualStyleBackColor = False
         ' 
         ' Form2
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(800, 450)
+        ClientSize = New Size(253, 295)
+        ControlBox = False
         Controls.Add(txtBox_Age)
         Controls.Add(txtBox_Surname)
         Controls.Add(txtBox_Name)
@@ -146,11 +164,13 @@ Partial Class Form2
         Controls.Add(Label3)
         Controls.Add(Label2)
         Controls.Add(Label1)
+        Controls.Add(btn_Delete)
         Controls.Add(btn_Update)
         Controls.Add(btn_Save)
         Controls.Add(btn_SignOut)
         Name = "Form2"
-        Text = "Form2"
+        StartPosition = FormStartPosition.CenterScreen
+        Text = "Data"
         ResumeLayout(False)
         PerformLayout()
     End Sub
@@ -165,4 +185,5 @@ Partial Class Form2
     Friend WithEvents txtBox_Age As TextBox
     Friend WithEvents btn_Save As Button
     Friend WithEvents btn_Update As Button
+    Friend WithEvents btn_Delete As Button
 End Class
