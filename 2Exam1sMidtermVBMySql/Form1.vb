@@ -6,7 +6,7 @@ Public Class Form1
 
     Private Sub btn_Test_Click(sender As Object, e As EventArgs) Handles btn_Test.Click
         MySqlConn = New MySqlConnection
-        MySqlConn.ConnectionString = "server=localhost;userid=root;password='';database=usercredentials"
+        MySqlConn.ConnectionString = "server=localhost;userid=root;password='';database=itecc05DB"
 
         Try
             MySqlConn.Open()
@@ -20,12 +20,12 @@ Public Class Form1
 
     Private Sub btn_Login_Click(sender As Object, e As EventArgs) Handles btn_Login.Click
         MySqlConn = New MySqlConnection
-        MySqlConn.ConnectionString = "server=localhost;userid=root;password='';database=usercredentials"
+        MySqlConn.ConnectionString = "server=localhost;userid=root;password='';database=itecc05DB"
         Dim READER As MySqlDataReader
 
         Try
             MySqlConn.Open()
-            Dim Query = "SELECT * FROM usercredentials.user_data WHERE userName = '" & txtBox_userName.Text & "' AND userPassword = '" & txtBox_password.Text & "'"
+            Dim Query = "SELECT * FROM itecc05DB.user_data WHERE userName = '" & txtBox_userName.Text & "' AND userPassword = '" & txtBox_password.Text & "'"
             COMMAND = New MySqlCommand(Query, MySqlConn)
             READER = COMMAND.ExecuteReader
             Dim count As Integer

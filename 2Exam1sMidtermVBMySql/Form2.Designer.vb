@@ -22,22 +22,22 @@ Partial Class Form2
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Label1 = New Label()
         btn_SignOut = New Button()
+        Label1 = New Label()
+        txtBox_eID = New TextBox()
+        Label2 = New Label()
+        Label3 = New Label()
+        Label4 = New Label()
+        txtBox_Name = New TextBox()
+        txtBox_Surname = New TextBox()
+        txtBox_Age = New TextBox()
+        btn_Save = New Button()
+        btn_Update = New Button()
         SuspendLayout()
-        ' 
-        ' Label1
-        ' 
-        Label1.AutoSize = True
-        Label1.Font = New Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label1.Location = New Point(93, 74)
-        Label1.Name = "Label1"
-        Label1.Size = New Size(130, 25)
-        Label1.TabIndex = 0
-        Label1.Text = "Second Form"
         ' 
         ' btn_SignOut
         ' 
+        btn_SignOut.Font = New Font("Segoe UI Semibold", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         btn_SignOut.Location = New Point(13, 6)
         btn_SignOut.Name = "btn_SignOut"
         btn_SignOut.Size = New Size(92, 28)
@@ -45,19 +45,124 @@ Partial Class Form2
         btn_SignOut.Text = "Sign Out"
         btn_SignOut.UseVisualStyleBackColor = True
         ' 
+        ' Label1
+        ' 
+        Label1.AutoSize = True
+        Label1.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label1.Location = New Point(13, 66)
+        Label1.Name = "Label1"
+        Label1.Size = New Size(32, 15)
+        Label1.TabIndex = 2
+        Label1.Text = "e-ID"
+        ' 
+        ' txtBox_eID
+        ' 
+        txtBox_eID.Location = New Point(78, 63)
+        txtBox_eID.Name = "txtBox_eID"
+        txtBox_eID.Size = New Size(138, 23)
+        txtBox_eID.TabIndex = 3
+        ' 
+        ' Label2
+        ' 
+        Label2.AutoSize = True
+        Label2.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label2.Location = New Point(13, 100)
+        Label2.Name = "Label2"
+        Label2.Size = New Size(40, 15)
+        Label2.TabIndex = 2
+        Label2.Text = "Name"
+        ' 
+        ' Label3
+        ' 
+        Label3.AutoSize = True
+        Label3.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label3.Location = New Point(13, 132)
+        Label3.Name = "Label3"
+        Label3.Size = New Size(57, 15)
+        Label3.TabIndex = 2
+        Label3.Text = "Surname"
+        ' 
+        ' Label4
+        ' 
+        Label4.AutoSize = True
+        Label4.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label4.Location = New Point(12, 163)
+        Label4.Name = "Label4"
+        Label4.Size = New Size(29, 15)
+        Label4.TabIndex = 2
+        Label4.Text = "Age"
+        ' 
+        ' txtBox_Name
+        ' 
+        txtBox_Name.Location = New Point(78, 94)
+        txtBox_Name.Name = "txtBox_Name"
+        txtBox_Name.Size = New Size(138, 23)
+        txtBox_Name.TabIndex = 3
+        ' 
+        ' txtBox_Surname
+        ' 
+        txtBox_Surname.Location = New Point(78, 129)
+        txtBox_Surname.Name = "txtBox_Surname"
+        txtBox_Surname.Size = New Size(138, 23)
+        txtBox_Surname.TabIndex = 3
+        ' 
+        ' txtBox_Age
+        ' 
+        txtBox_Age.Location = New Point(78, 163)
+        txtBox_Age.Name = "txtBox_Age"
+        txtBox_Age.Size = New Size(138, 23)
+        txtBox_Age.TabIndex = 3
+        ' 
+        ' btn_Save
+        ' 
+        btn_Save.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        btn_Save.Location = New Point(13, 201)
+        btn_Save.Name = "btn_Save"
+        btn_Save.Size = New Size(92, 28)
+        btn_Save.TabIndex = 1
+        btn_Save.Text = "Save"
+        btn_Save.UseVisualStyleBackColor = True
+        ' 
+        ' btn_Update
+        ' 
+        btn_Update.Font = New Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        btn_Update.Location = New Point(111, 201)
+        btn_Update.Name = "btn_Update"
+        btn_Update.Size = New Size(92, 28)
+        btn_Update.TabIndex = 1
+        btn_Update.Text = "Update"
+        btn_Update.UseVisualStyleBackColor = True
+        ' 
         ' Form2
         ' 
         AutoScaleDimensions = New SizeF(7F, 15F)
         AutoScaleMode = AutoScaleMode.Font
         ClientSize = New Size(800, 450)
-        Controls.Add(btn_SignOut)
+        Controls.Add(txtBox_Age)
+        Controls.Add(txtBox_Surname)
+        Controls.Add(txtBox_Name)
+        Controls.Add(txtBox_eID)
+        Controls.Add(Label4)
+        Controls.Add(Label3)
+        Controls.Add(Label2)
         Controls.Add(Label1)
+        Controls.Add(btn_Update)
+        Controls.Add(btn_Save)
+        Controls.Add(btn_SignOut)
         Name = "Form2"
         Text = "Form2"
         ResumeLayout(False)
         PerformLayout()
     End Sub
-
-    Friend WithEvents Label1 As Label
     Friend WithEvents btn_SignOut As Button
+    Friend WithEvents Label1 As Label
+    Friend WithEvents txtBox_eID As TextBox
+    Friend WithEvents Label2 As Label
+    Friend WithEvents Label3 As Label
+    Friend WithEvents Label4 As Label
+    Friend WithEvents txtBox_Name As TextBox
+    Friend WithEvents txtBox_Surname As TextBox
+    Friend WithEvents txtBox_Age As TextBox
+    Friend WithEvents btn_Save As Button
+    Friend WithEvents btn_Update As Button
 End Class
