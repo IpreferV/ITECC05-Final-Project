@@ -36,7 +36,9 @@ Public Class Form1
             End While
 
             If count = 1 Then
-                MessageBox.Show("Logged in successfully.")
+                'MessageBox.Show("Logged in successfully.")
+                Form2.Show()
+                Me.Hide()
             ElseIf count > 1 Then
                 MessageBox.Show("Duplicate credential found.")
             Else

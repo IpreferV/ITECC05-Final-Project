@@ -22,9 +22,42 @@ Partial Class Form2
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        components = New System.ComponentModel.Container
-        Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(800, 450)
-        Me.Text = "Form2"
+        Label1 = New Label()
+        btn_SignOut = New Button()
+        SuspendLayout()
+        ' 
+        ' Label1
+        ' 
+        Label1.AutoSize = True
+        Label1.Font = New Font("Segoe UI", 14.25F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label1.Location = New Point(93, 74)
+        Label1.Name = "Label1"
+        Label1.Size = New Size(130, 25)
+        Label1.TabIndex = 0
+        Label1.Text = "Second Form"
+        ' 
+        ' btn_SignOut
+        ' 
+        btn_SignOut.Location = New Point(13, 6)
+        btn_SignOut.Name = "btn_SignOut"
+        btn_SignOut.Size = New Size(92, 28)
+        btn_SignOut.TabIndex = 1
+        btn_SignOut.Text = "Sign Out"
+        btn_SignOut.UseVisualStyleBackColor = True
+        ' 
+        ' Form2
+        ' 
+        AutoScaleDimensions = New SizeF(7F, 15F)
+        AutoScaleMode = AutoScaleMode.Font
+        ClientSize = New Size(800, 450)
+        Controls.Add(btn_SignOut)
+        Controls.Add(Label1)
+        Name = "Form2"
+        Text = "Form2"
+        ResumeLayout(False)
+        PerformLayout()
     End Sub
+
+    Friend WithEvents Label1 As Label
+    Friend WithEvents btn_SignOut As Button
 End Class
