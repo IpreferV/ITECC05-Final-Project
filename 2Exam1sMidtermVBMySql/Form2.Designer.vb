@@ -265,7 +265,7 @@ Partial Class Form2
         ' 
         ' DateTimePicker1
         ' 
-        DateTimePicker1.CustomFormat = "YYYY-MM-DD"
+        DateTimePicker1.CustomFormat = "yyyy-MM-dd"
         DateTimePicker1.Format = DateTimePickerFormat.Short
         DateTimePicker1.Location = New Point(78, 186)
         DateTimePicker1.Name = "DateTimePicker1"

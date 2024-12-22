@@ -1,4 +1,10 @@
-﻿Imports MySql.Data.MySqlClient
+﻿Imports System.Security.Cryptography
+Imports System.Windows.Forms.DataVisualization.Charting
+Imports System.Windows.Forms.VisualStyles.VisualStyleElement
+Imports LiveCharts
+Imports LiveCharts.Helpers
+Imports LiveCharts.Wpf.Charts.Base
+Imports MySql.Data.MySqlClient
 Imports Mysqlx.Crud
 
 Public Class Form2
@@ -18,7 +24,7 @@ Public Class Form2
 
         Try
             MySqlConn.Open()
-            Dim Query = "INSERT INTO itecc05DB.eData (eID, name, surname, age, gender, DOB) VALUES ('" & txtBox_eID.Text & "', '" & txtBox_Name.Text & "', '" & txtBox_Surname.Text & "', '" & txtBox_Age.Text & "', '" & gender & "', '" & DateTimePicker1.Text & "')"
+            Dim Query = "INSERT INTO itecc05DB.eData (eID, name, surname, age, gender, dob) VALUES ('" & txtBox_eID.Text & "', '" & txtBox_Name.Text & "', '" & txtBox_Surname.Text & "', '" & txtBox_Age.Text & "', '" & gender & "', '" & DateTimePicker1.Value.ToString("yyyy-MM-dd") & "')"
             COMMAND = New MySqlCommand(Query, MySqlConn)
             READER = COMMAND.ExecuteReader
 
@@ -43,7 +49,7 @@ Public Class Form2
 
         Try
             MySqlConn.Open()
-            Dim Query = "UPDATE itecc05DB.eData SET eid='" & txtBox_eID.Text & "', name='" & txtBox_Name.Text & "', surname='" & txtBox_Surname.Text & "', age='" & txtBox_Age.Text & "', gender='" & gender & "', dob='" & DateTimePicker1.Text & "' WHERE eid = '" & txtBox_eID.Text & "'"
+            Dim Query = "UPDATE itecc05DB.eData SET eid='" & txtBox_eID.Text & "', name='" & txtBox_Name.Text & "', surname='" & txtBox_Surname.Text & "', age='" & txtBox_Age.Text & "', gender='" & gender & "', dob='" & DateTimePicker1.Value.ToString("yyyy-MM-dd") & "' WHERE eid = '" & txtBox_eID.Text & "'"
             COMMAND = New MySqlCommand(Query, MySqlConn)
             READER = COMMAND.ExecuteReader
 
@@ -177,7 +183,7 @@ Public Class Form2
 
         Try
             MySqlConn.Open()
-            Dim Query = "SELECT eid as 'Employee ID', name as 'First Name', surname as 'Last Name', age as 'Age', gender as 'Gender', dob as 'Date of Birth' FROM itecc05DB.edata"
+            Dim Query = "SELECT eid as 'Employee ID', name as 'First Name', surname as 'Last Name', age as 'Age', gender as 'Gender', DATE_FORMAT(dob, '%Y-%m-%d') as 'Date of Birth' FROM itecc05DB.edata"
             COMMAND = New MySqlCommand(Query, MySqlConn)
             SDA.SelectCommand = COMMAND
             SDA.Fill(dbDataSet)
@@ -204,7 +210,7 @@ Public Class Form2
 
         Try
             MySqlConn.Open()
-            Dim Query = "SELECT eid as 'Employee ID', name as 'First Name', surname as 'Last Name', age as 'Age', gender as 'Gender', dob as 'Date of Birth' FROM itecc05DB.edata"
+            Dim Query = "SELECT eid as 'Employee ID', name as 'First Name', surname as 'Last Name', age as 'Age', gender as 'Gender', DATE_FORMAT(dob, '%Y-%m-%d') as 'Date of Birth' FROM itecc05DB.edata"
             COMMAND = New MySqlCommand(Query, MySqlConn)
             SDA.SelectCommand = COMMAND
             SDA.Fill(dbDataSet)
@@ -231,9 +237,11 @@ Public Class Form2
             MySqlConn.Open()
             Dim Query = "SELECT * FROM itecc05DB.edata"
             COMMAND = New MySqlCommand(Query, MySqlConn)
+            Chart1.Series("Name vs. Age").Points.Clear()
             READER = COMMAND.ExecuteReader
             While READER.Read
-                Chart1.Series("Name vs. Age").Points.AddXY(READER.GetInt32("eid"), READER.GetInt32("age"))
+                Dim pointIndex As Integer = Chart1.Series("Name vs. Age").Points.AddXY(READER.GetInt32("eid"), READER.GetInt32("age"))
+                Chart1.Series("Name vs. Age").Points(pointIndex).AxisLabel = READER.GetString("name")
             End While
 
         Catch ex As MySqlException
