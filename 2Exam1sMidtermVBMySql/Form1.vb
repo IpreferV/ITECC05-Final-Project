@@ -40,7 +40,7 @@ Public Class Form1
             ElseIf count > 1 Then
                 MessageBox.Show("Duplicate credential found.")
             Else
-                MessageBox.Show("Invalid credential.")
+                MessageBox.Show("Invalid credentials.")
             End If
 
             MySqlConn.Close()

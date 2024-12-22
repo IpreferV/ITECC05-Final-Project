@@ -97,7 +97,7 @@ Partial Class Form1
         Controls.Add(txtBox_userName)
         Controls.Add(btn_Test)
         Name = "Form1"
-        Text = "Midterm Examination VB"
+        Text = "Login Form"
         ResumeLayout(False)
         PerformLayout()
     End Sub
